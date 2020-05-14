@@ -13,8 +13,13 @@ bcrypt.genSalt(10, (err, salt) => {
    bcrypt.hash(user.password, salt, (err, hash) => {
       if (err) console.log(err);
       user.password = hash;
-      user.save((err) => {
-          if (err) console.log(err);
+      User.countDocuments({}, function (err, count) {
+         console.log(count);
+         if (count == 0){
+            user.save((err) => {
+                 if (err) console.log(err);
+             });
+         }
       });
    });
 });

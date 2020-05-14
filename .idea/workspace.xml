@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a6e8fa4d-c266-4ae1-9dd6-e5a07d15805d" name="Default Changelist" comment="" />
+    <list default="true" id="a6e8fa4d-c266-4ae1-9dd6-e5a07d15805d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/seed.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -15,7 +19,7 @@
     <session id="1543757537">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.42" value="1" />
@@ -26,7 +30,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="ejs" value="1" />
-          <entry key="js" value="11" />
+          <entry key="js" value="13" />
           <entry key="json" value="2" />
         </counts>
       </usages-collector>
@@ -34,30 +38,48 @@
         <counts>
           <entry key="EJS" value="1" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="11" />
+          <entry key="JavaScript" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="ejs" value="104" />
-          <entry key="js" value="3152" />
+          <entry key="js" value="3306" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="EJS" value="104" />
-          <entry key="JavaScript" value="3152" />
+          <entry key="JavaScript" value="3306" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
+            <state relative-caret-position="330">
+              <caret line="50" column="18" lean-forward="true" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/seed.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -111,15 +133,15 @@
       <list>
         <option value="$PROJECT_DIR$/config/database.js" />
         <option value="$PROJECT_DIR$/config/passport.js" />
-        <option value="$PROJECT_DIR$/models/user.js" />
         <option value="$PROJECT_DIR$/models/seed.js" />
-        <option value="$PROJECT_DIR$/seed.js" />
         <option value="$PROJECT_DIR$/routes/dashboard.js" />
         <option value="$PROJECT_DIR$/config/auth.js" />
         <option value="$PROJECT_DIR$/views/admin/admin-login.ejs" />
         <option value="$PROJECT_DIR$/routes/admin/dashboard.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/admin/admin.js" />
+        <option value="$PROJECT_DIR$/models/user.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/seed.js" />
       </list>
     </option>
   </component>
@@ -137,9 +159,9 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="534" />
-    <option name="y" value="98" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="329" />
+    <option name="y" value="93" />
     <option name="width" value="707" />
     <option name="height" value="592" />
   </component>
@@ -233,16 +255,15 @@
       <workItem from="1589213038010" duration="2846000" />
       <workItem from="1589255195551" duration="299000" />
       <workItem from="1589293666961" duration="786000" />
-      <workItem from="1589472150702" duration="8701000" />
+      <workItem from="1589472150702" duration="10765000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12632000" />
+    <option name="totallyTimeSpent" value="14696000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="534" y="98" width="707" height="592" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.245142" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -256,7 +277,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.47816592" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.47540984" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -287,13 +308,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="25" column="63" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/passport.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-390">
@@ -305,13 +319,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
           <caret line="60" column="23" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seed.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -341,8 +348,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
+        <state relative-caret-position="330">
+          <caret line="50" column="18" lean-forward="true" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
         </state>
       </provider>
     </entry>
