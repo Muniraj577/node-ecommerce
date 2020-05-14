@@ -47,7 +47,7 @@ db.once('open', function() {
 //View engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+require('./seed');
 //Set public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
