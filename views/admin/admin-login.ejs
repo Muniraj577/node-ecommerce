@@ -3,6 +3,14 @@
     <title>Admin Login</title>
 </head>
 <body>
+<%- messages('messages', locals) %>
+<% if (errors) { %>
+    <% errors.forEach(function(error){ %>
+        <div class="alert alert-danger">
+            <%= error.msg %>
+        </div>
+    <% }); %>
+<% } %>
 <h1>Admin Login Page</h1>
 <form action="/admin/login" method="post">
     <div class="form-group">

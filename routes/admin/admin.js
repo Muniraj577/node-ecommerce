@@ -15,7 +15,13 @@ router.post('/login', function (req, res, next) {
         failureFlash: true
     }) (req, res, next);
 });
+
+router.get('/logout', function (req, res) {
+    req.logout();
+    req.flash('success', 'You are logged out');
+    res.redirect('/admin/login');
+});
 router.get('/', isAdmin, (req, res) => {
-    res.send('This is admin page');
+    res.render('admin/dashboard');
 });
 module.exports = router;

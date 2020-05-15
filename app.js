@@ -1,6 +1,7 @@
 
 let express = require('express');
 let path = require('path');
+// let engine = require('ejs-locals');
 let mongoose = require('mongoose');
 let config = require('./config/database');
 let bodyParser = require('body-parser');
@@ -46,6 +47,7 @@ db.once('open', function() {
 
 //View engine setup
 app.set('views', path.join(__dirname, 'views'));
+// app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 require('./seed');
 //Set public folder
