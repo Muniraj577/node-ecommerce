@@ -1,0 +1,21 @@
+<%- include ('../frontend/layouts/base') %>
+<div class="container">
+    <div class="row">
+        <div class="col-sx-12 col-md-3">
+            <h3>Categories</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="/products">All Products</a>
+                </li>
+                <% categories.forEach(function (cat) { %>
+                  <li class="list-group-item">
+                      <a href="/products/<%= cat.slug %>"><%= cat.name%></a>
+                  </li>
+                <% })%>
+            </ul>
+        </div>
+        <div class="col-xs-12"></div>
+        <div class="col-xs-12 col-md-8"></div>
+    </div>
+</div>
+<%- include ('../frontend/layouts/footer') %>

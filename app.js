@@ -1,7 +1,5 @@
-
 let express = require('express');
 let path = require('path');
-// let engine = require('ejs-locals');
 let mongoose = require('mongoose');
 let config = require('./config/database');
 let bodyParser = require('body-parser');
@@ -15,7 +13,7 @@ let app = express();
 
 //Body Parser Middleware
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 // parse application/json
 app.use(bodyParser.json());
 
@@ -37,11 +35,16 @@ app.use(function (req, res, next) {
     res.locals.messages = require('express-messages')(req, res);
     next();
 });
+
+app.get('*', (req, res, next) => {
+    res.locals.cart = req.session.cart;
+    next();
+});
 //Connect to db
 mongoose.connect(config.database, {useNewUrlParser: true, useUnifiedTopology: true});
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
+db.once('open', function () {
     console.log("Connected to MongoDB")
 });
 
@@ -52,10 +55,8 @@ app.set('view engine', 'ejs');
 require('./seed');
 //Set public folder
 app.use(express.static(path.join(__dirname, 'public')));
-
 //Set global errors variables
 app.locals.errors = null;
-
 
 
 app.get('*', function (req, res, next) {
@@ -64,11 +65,19 @@ app.get('*', function (req, res, next) {
 });
 
 //Set Routes
-app.get('/', (req, res) => {
-   res.send('dfdbfdbbd');
-});
+// app.get('/', (req, res) => {
+//    res.send('dfdbfdbbd');
+// });
+let frontend = require('./routes/frontend/frontend');
+let cart = require('./routes/frontend/cart');
 let admin = require('./routes/admin/admin');
+let admincategory = require('./routes/admin/category');
+let adminproduct = require('./routes/admin/product');
+app.use('/', frontend);
+app.use('/cart', cart);
 app.use('/admin', admin);
+app.use('/admin/categories', admincategory);
+app.use('/admin/products', adminproduct);
 //Start the server
 let hostname = '127.0.0.1';
 let port = 3000;

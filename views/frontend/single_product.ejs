@@ -1,0 +1,21 @@
+<%- include ('../frontend/layouts/base') %>
+<link rel="stylesheet" href="/css/style.css">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-12 col-sm-12">
+            <h1 class="page-header"><%= product.name %></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-5">
+            <img class="spi" src="/product/images/<%= product.image %>" alt="">
+            <br>
+        </div>
+        <div class="col-xs-12 col-md-7">
+            <p><%= product.desc %></p>
+            <p><%= parseFloat(product.price).toFixed(2) %></p>
+            <p><a class="btn btn-primary" href="/add-to-cart/<%= product.slug %>">Add to Cart</a></p>
+        </div>
+    </div>
+</div>
+<%- include ('../frontend/layouts/footer') %>
