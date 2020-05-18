@@ -16,3 +16,16 @@ a.pa {
 img.spi {
     width: 100%;
 }
+
+img.image{
+    width: 100px;
+}
+
+table.alignmiddle td{
+    vertical-align: middle; !important;
+}
+
+.paypal{
+    position: absolute;
+    left: 3000px;
+}

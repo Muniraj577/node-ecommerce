@@ -5,7 +5,9 @@ let fs = require('fs');
 let Category = require('../../models/category');
 let Product = require('../../models/product');
 router.get('/', (req, res) => {
-    res.render('frontend/index');
+    res.render('frontend/index', {
+        title: 'Home Page'
+    });
 });
 
 router.get('/shop', (req, res) => {
