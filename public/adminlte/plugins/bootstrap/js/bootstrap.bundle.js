@@ -5297,7 +5297,7 @@
 
     var $target = $(target).one(Event$5.SHOW, function (showEvent) {
       if (showEvent.isDefaultPrevented()) {
-        // Only register focus restorer if modal will actually get shown
+        // Only register.ejs focus restorer if modal will actually get shown
         return;
       }
 

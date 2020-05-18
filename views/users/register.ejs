@@ -1,0 +1,28 @@
+<%- include ('../frontend/layouts/base') %>
+<div class="container-fluid">
+    <h1 class="text-center"><%= title %></h1>
+    <form action="/users/register" method="post" style="margin-left: 30%;">
+        <div class="form-group col-md-6">
+            <label for="name">Name: </label>
+            <input type="text" name="name" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="email">Email: </label>
+            <input type="email" name="email" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="username">Username: </label>
+            <input type="text" name="username" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="password">Password: </label>
+            <input type="password" name="password" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="confirm-password">Confirm Password: </label>
+            <input type="password" name="password2" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary ml-3">Register</button>
+    </form>
+</div>
+<%- include ('../frontend/layouts/footer') %>

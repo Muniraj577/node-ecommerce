@@ -7204,7 +7204,7 @@ core_defaults._set('global', {
  */
 
 // The layout service is very self explanatory.  It's responsible for the layout within a chart.
-// Scales, Legends and Plugins all rely on the layout service and can easily register to be placed anywhere they need
+// Scales, Legends and Plugins all rely on the layout service and can easily register.ejs to be placed anywhere they need
 // It is this service's responsibility of carrying out that layout.
 var core_layouts = {
 	defaults: {},
@@ -7294,7 +7294,7 @@ var core_layouts = {
 		// The areas L1 and L2 are the left axes. R1 is the right axis, T1 is the top axis and
 		// B1 is the bottom axis
 		// There are also 4 quadrant-like locations (left to right instead of clockwise) reserved for chart overlays
-		// These locations are single-box locations only, when trying to register a chartArea location that is already taken,
+		// These locations are single-box locations only, when trying to register.ejs a chartArea location that is already taken,
 		// an error will be thrown.
 		//
 		// |----------------------------------------------------|
@@ -8077,7 +8077,7 @@ var core_plugins = {
 };
 
 var core_scaleService = {
-	// Scale registration object. Extensions can register new scale types (such as log or DB scales) and then
+	// Scale registration object. Extensions can register.ejs new scale types (such as log or DB scales) and then
 	// use the new chart options to grab the correct scale
 	constructors: {},
 	// Use a registration function so that we can move to an ES6 map when we no longer need to support
@@ -16028,7 +16028,7 @@ core_controller.helpers.each(scales, function(scale, type) {
 	core_controller.scaleService.registerScaleType(type, scale, scale._defaults);
 });
 
-// Load to register built-in adapters (as side effects)
+// Load to register.ejs built-in adapters (as side effects)
 
 
 // Loading built-in plugins
@@ -16086,7 +16086,7 @@ core_controller.pluginService = core_controller.plugins;
 
 /**
  * Provided for backward compatibility, inheriting from Chart.PlugingBase has no
- * effect, instead simply create/register plugins via plain JavaScript objects.
+ * effect, instead simply create/register.ejs plugins via plain JavaScript objects.
  * @interface Chart.PluginBase
  * @deprecated since version 2.5.0
  * @todo remove at version 3

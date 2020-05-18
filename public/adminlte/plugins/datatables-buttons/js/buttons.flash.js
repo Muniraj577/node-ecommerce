@@ -95,7 +95,7 @@ var ZeroClipboard_TableTools = {
 	},
 
 	register: function(id, client) {
-		// register new client to receive events
+		// register.ejs new client to receive events
 		this.clients[id] = client;
 	},
 
@@ -133,7 +133,7 @@ var ZeroClipboard_TableTools = {
 		this.id = ZeroClipboard_TableTools.nextId++;
 		this.movieId = 'ZeroClipboard_TableToolsMovie_' + this.id;
 
-		// register client with singleton to receive flash events
+		// register.ejs client with singleton to receive flash events
 		ZeroClipboard_TableTools.register(this.id, this);
 
 		// create movie

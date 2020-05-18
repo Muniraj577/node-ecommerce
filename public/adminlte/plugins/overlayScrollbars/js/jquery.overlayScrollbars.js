@@ -343,7 +343,7 @@
                 }
                 else {
                     if (instance) {
-                        //register instance
+                        //register.ejs instance
                         target[_instancePropertyString] = instance;
                         _targets.push(target);
                     }
@@ -5526,7 +5526,7 @@
                 }
                 else if (extNameTypeString) {
                     if (COMPATIBILITY.type(extension) == TYPES.f) {
-                        //register extension
+                        //register.ejs extension
                         _pluginsExtensions.push({
                             name: extensionName,
                             extensionFactory: extension,

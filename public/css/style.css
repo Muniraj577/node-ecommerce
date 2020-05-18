@@ -29,3 +29,9 @@ table.alignmiddle td{
     position: absolute;
     left: 3000px;
 }
+
+.alert-error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}

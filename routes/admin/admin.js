@@ -21,7 +21,7 @@ router.get('/logout', function (req, res) {
     req.flash('success', 'You are logged out');
     res.redirect('/admin/login');
 });
-router.get('/', (req, res) => {
+router.get('/', isAdmin, (req, res) => {
     res.render('admin/dashboard');
 });
 module.exports = router;

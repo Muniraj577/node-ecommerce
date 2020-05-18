@@ -5212,7 +5212,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
      **
      > Parameters
      **
-     - font (object) the font to register
+     - font (object) the font to register.ejs
      = (object) the font you passed in
      > Usage
      | Cufon.registerFont(Raphael.registerFont({…}));

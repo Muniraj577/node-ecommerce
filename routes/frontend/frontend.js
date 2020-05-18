@@ -4,13 +4,15 @@ let app = express();
 let fs = require('fs');
 let Category = require('../../models/category');
 let Product = require('../../models/product');
+let auth = require('../../config/auth');
+let isUser = auth.isUser;
 router.get('/', (req, res) => {
     res.render('frontend/index', {
         title: 'Home Page'
     });
 });
 
-router.get('/shop', (req, res) => {
+router.get('/shop', isUser, (req, res) => {
     Category.find((err, categories) => {
         if (err) {
             console.log(err);
@@ -67,6 +69,7 @@ router.get('/products/:category', (req, res) => {
 
 router.get('/products/:category/:product', (req, res) => {
     // let image = null;
+    let loggedIn = (req.isAuthenticated()) ? true : false;
     Product.findOne({slug: req.params.product}, (err, product) => {
         if (err) {
             console.log(err);
@@ -74,6 +77,7 @@ router.get('/products/:category/:product', (req, res) => {
             res.render('frontend/single_product', {
                 title: product.name,
                 product: product,
+                loggedIn: loggedIn
             });
         }
     });

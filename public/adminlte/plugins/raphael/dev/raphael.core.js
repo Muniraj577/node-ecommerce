@@ -5082,7 +5082,7 @@ define(["eve"], function(eve) {
      **
      > Parameters
      **
-     - font (object) the font to register
+     - font (object) the font to register.ejs
      = (object) the font you passed in
      > Usage
      | Cufon.registerFont(Raphael.registerFont({…}));

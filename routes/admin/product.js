@@ -31,7 +31,7 @@ const upload = multer({
 });
 
 // Get products
-router.get('/', function (req, res) {
+router.get('/', isAdmin, function (req, res) {
     let count;
     Product.countDocuments(function (err, c) {
         count = c;
@@ -45,7 +45,7 @@ router.get('/', function (req, res) {
     });
 });
 
-router.get('/add-product', (req, res) => {
+router.get('/add-product', isAdmin, (req, res) => {
     let name = "";
     let desc = "";
     let price = "";
@@ -59,7 +59,7 @@ router.get('/add-product', (req, res) => {
     });
 });
 
-router.post('/add-product', upload.single('image'), [
+router.post('/add-product', isAdmin, upload.single('image'), [
     check('name', 'Name is required').not().isEmpty(),
     check('desc', 'Description is required').not().isEmpty(),
     check('price', 'Price is required').not().isEmpty()
@@ -123,7 +123,7 @@ router.post('/add-product', upload.single('image'), [
     }
 });
 
-router.get('/edit-product/:id', (req, res) => {
+router.get('/edit-product/:id', isAdmin, (req, res) => {
     let errors;
     if (req.session.errors) errors = req.session.errors;
     req.session.errors = null;
@@ -148,7 +148,7 @@ router.get('/edit-product/:id', (req, res) => {
     });
 });
 
-router.post('/edit-product/:id', upload.single('image'), [
+router.post('/edit-product/:id', isAdmin, upload.single('image'), [
     check('name', 'Name is required').not().isEmpty(),
     check('desc', 'Description is required').not().isEmpty(),
     check('price', 'Price is required').not().isEmpty()
@@ -204,7 +204,7 @@ router.post('/edit-product/:id', upload.single('image'), [
     }
 });
 
-router.get('/delete-product/:id', (req, res) => {
+router.get('/delete-product/:id', isAdmin, (req, res) => {
     let id = req.params.id;
     Product.findByIdAndRemove(id, (err, product) => {
         if (product.image != "") {

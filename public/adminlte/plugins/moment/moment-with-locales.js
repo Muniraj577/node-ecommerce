@@ -10,7 +10,7 @@
         return hookCallback.apply(null, arguments);
     }
 
-    // This is done to register the method called with moment()
+    // This is done to register.ejs the method called with moment()
     // without creating circular dependencies.
     function setHookCallback (callback) {
         hookCallback = callback;
@@ -1842,7 +1842,7 @@
 
     function loadLocale(name) {
         var oldLocale = null;
-        // TODO: Find a better way to register and load all the locales in Node
+        // TODO: Find a better way to register.ejs and load all the locales in Node
         if (!locales[name] && (typeof module !== 'undefined') &&
                 module && module.exports) {
             try {

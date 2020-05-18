@@ -5,7 +5,6 @@ let config = require('./config/database');
 let bodyParser = require('body-parser');
 let session = require('express-session');
 
-
 let passport = require('passport');
 
 // Init app
@@ -71,11 +70,13 @@ app.get('*', function (req, res, next) {
 let frontend = require('./routes/frontend/frontend');
 let cart = require('./routes/frontend/cart');
 let admin = require('./routes/admin/admin');
+let users = require('./routes/user/users');
 let admincategory = require('./routes/admin/category');
 let adminproduct = require('./routes/admin/product');
 app.use('/', frontend);
 app.use('/cart', cart);
 app.use('/admin', admin);
+app.use('/users', users);
 app.use('/admin/categories', admincategory);
 app.use('/admin/products', adminproduct);
 //Start the server

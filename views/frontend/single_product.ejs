@@ -14,7 +14,11 @@
         <div class="col-xs-12 col-md-7">
             <p><%= product.desc %></p>
             <p><%= parseFloat(product.price).toFixed(2) %></p>
-            <p><a class="btn btn-primary" href="/cart/add-to-cart/<%= product.slug %>">Add to Cart</a></p>
+            <% if (loggedIn) { %>
+                <p><a class="btn btn-primary" href="/cart/add-to-cart/<%= product.slug %>">Add to Cart</a></p>
+            <% } else { %>
+                You must be logged in to purchase
+            <% } %>
         </div>
     </div>
 </div>

@@ -29,7 +29,7 @@ const upload = multer({
 });
 
 // Get categories
-router.get('/', function (req, res) {
+router.get('/', isAdmin, function (req, res) {
     let count;
     Category.countDocuments(function (err, c) {
         count = c;
@@ -43,14 +43,14 @@ router.get('/', function (req, res) {
     });
 });
 
-router.get('/add-category', (req, res) => {
+router.get('/add-category', isAdmin, (req, res) => {
     let name = "";
     res.render('admin/add-category', {
         name: name,
     });
 });
 
-router.post('/add-category', upload.single('image'), [
+router.post('/add-category', isAdmin, upload.single('image'), [
     check('name', 'Name is required').not().isEmpty(),
 ], (req, res) => {
     let name = req.body.name;
@@ -90,7 +90,7 @@ router.post('/add-category', upload.single('image'), [
     }
 });
 
-router.get('/edit-category/:id', (req, res) => {
+router.get('/edit-category/:id', isAdmin, (req, res) => {
     let errors;
     if (req.session.errors) errors = req.session.errors;
     req.session.errors = null;
@@ -105,7 +105,7 @@ router.get('/edit-category/:id', (req, res) => {
     });
 });
 
-router.post('/edit-category/:id', upload.single('image'), [
+router.post('/edit-category/:id', isAdmin, upload.single('image'), [
     check('name', 'Name is required').not().isEmpty(),
 ], (req, res) => {
     let name = req.body.name;
@@ -153,7 +153,7 @@ router.post('/edit-category/:id', upload.single('image'), [
     }
 });
 
-router.get('/delete-category/:id', (req, res) => {
+router.get('/delete-category/:id', isAdmin, (req, res) => {
     let id = req.params.id;
     Category.findByIdAndRemove(id, (err, cat) => {
         if (cat.image != "") {

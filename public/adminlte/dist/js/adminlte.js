@@ -307,7 +307,7 @@
       FOOTER: '.main-footer',
       PUSHMENU_BTN: '[data-widget="pushmenu"]',
       LOGIN_BOX: '.login-box',
-      REGISTER_BOX: '.register-box'
+      REGISTER_BOX: '.register.ejs-box'
     };
     var ClassName = {
       HOLD: 'hold-transition',
@@ -318,7 +318,7 @@
       NAVBAR_FIXED: 'layout-navbar-fixed',
       FOOTER_FIXED: 'layout-footer-fixed',
       LOGIN_PAGE: 'login-page',
-      REGISTER_PAGE: 'register-page',
+      REGISTER_PAGE: 'register.ejs-page',
       CONTROL_SIDEBAR_SLIDE_OPEN: 'control-sidebar-slide-open',
       CONTROL_SIDEBAR_OPEN: 'control-sidebar-open'
     };
