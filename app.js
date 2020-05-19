@@ -49,7 +49,7 @@ db.once('open', function () {
 
 //View engine setup
 app.set('views', path.join(__dirname, 'views'));
-// app.engine('ejs', engine);
+
 app.set('view engine', 'ejs');
 require('./seed');
 //Set public folder
@@ -64,9 +64,7 @@ app.get('*', function (req, res, next) {
 });
 
 //Set Routes
-// app.get('/', (req, res) => {
-//    res.send('dfdbfdbbd');
-// });
+
 let frontend = require('./routes/frontend/frontend');
 let cart = require('./routes/frontend/cart');
 let admin = require('./routes/admin/admin');

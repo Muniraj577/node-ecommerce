@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/shop', isUser, (req, res) => {
+router.get('/shop', (req, res) => {
     Category.find((err, categories) => {
         if (err) {
             console.log(err);

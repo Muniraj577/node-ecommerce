@@ -1,5 +1,34 @@
 <%- include ('../frontend/layouts/base') %>
+<style>
+    .input-container {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        width: 50%;
+        margin-bottom: 15px;
+    }
+
+    .icon {
+        padding: 10px;
+        color: white;
+        min-width: 40px;
+        text-align: center;
+    }
+
+    .input-field {
+        width: 50%;
+        padding: 10px;
+        outline: none;
+        text-align: center;
+    }
+
+    .input-field:focus {
+        border: 2px solid dodgerblue;
+    }
+
+
+</style>
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
 <div class="container mt-4">
     <% if (typeof cart !== 'undefined') { %>
         <h1 class="page-title">My Cart</h1><br>
@@ -9,8 +38,8 @@
                 <th>Product</th>
                 <th>Price</th>
                 <th>Quantity</th>
-                <th></th>
                 <th>Subtotal</th>
+                <th></th>
             </tr>
             <% let total = 0; %>
             <% cart.forEach((product) => { %>
@@ -18,15 +47,20 @@
                 <% total += +sub %>
                 <tr>
                     <td><img class="image" src="<%= product.image %>" alt=""></td>
-                    <td><%= product.title %></td>
+                    <td><%= product.name %></td>
                     <td>Rs. <%= product.price %></td>
-                    <td><%= product.qty %></td>
                     <td>
-                        <a href="/cart/update/<%= product.name %>?action=add">+</a>&nbsp;
-                        <a href="/cart/update/<%= product.name %>?action=remove">-</a>&nbsp;
-                        <a href="/cart/update/<%= product.name %>?action=clear">Clear</a>&nbsp;
+                        <div class="input-container">
+                            <a class="btn btn-dark btn-sm icon"
+                               href="/cart/update/<%= product.name %>?action=remove"><i class="fa fa-minus-circle"></i></a>
+                            <input class="input-field" type="text" value="<%= product.qty %>">
+                            <a class="btn btn-dark btn-sm icon" href="/cart/update/<%= product.name %>?action=add"><i class="fa fa-plus-circle"></i></a>&nbsp;
+                        </div>
                     </td>
                     <td>Rs. <%= sub %></td>
+                    <td>
+                        <a href="/cart/update/<%= product.name %>?action=clear"><i class="fa fa-times-circle fa-2x" style="color: red;"></i></a>&nbsp;
+                    </td>
                 </tr>
             <% }) %>
             <tr>
@@ -34,7 +68,7 @@
             </tr>
             <tr>
                 <td colspan="5" align="right">
-                    <a href="/cart/clear" class="btn btn-danger clearcart">Clear Cart</a>
+                    <a href="/cart/clear" class="btn btn-danger clearcart">Empty Cart</a>
                 </td>
                 <td colspan="5" align="right">
                     <a href="#" class="btn btn-primary buynow">Buy Now</a>
