@@ -1,0 +1,86 @@
+<%- include ('../admin/layouts/base') %>
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h3>Users List</h3>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Users</h3>
+                    <a href="/admin/user/add-user" class="btn btn-primary float-right">New User</a>
+                </div>
+                <div class="card-body">
+                    <% if (count > 0) { %>
+                        <table id="user" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <!--<th>S.N</th>-->
+                                <th>Name</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Admin Status</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <% users.forEach(function (user) { %>
+                                <tr>
+                                    <td><%= user.name %></td>
+                                    <td><%= user.username %></td>
+                                    <td><%= user.email %></td>
+                                    <td>
+                                        <% if (user.admin == 0) { %>
+                                            User
+                                        <% } else { %>
+                                            Admin
+                                        <% } %>
+                                    </td>
+                                    <td>
+                                        <% if (user.loggedIn != user._id) { %>
+                                            <% if (user.admin == 0) { %>
+                                                <form action="/admin/user/mark-user-or-admin/<%= user._id %>"
+                                                      method="post">
+                                                    <button type="submit" class="btn btn-primary">Mark Admin</button>
+                                                </form>
+                                            <% } else { %>
+                                                <form action="/admin/user/mark-user-or-admin/<%= user._id %>"
+                                                      method="post">
+                                                    <button type="submit" class="btn btn-primary">Mark User</button>
+                                                </form>
+                                            <% } %>
+                                            <a class="btn btn-primary"
+                                               href="/admin/user/change-user-password/<%= user._id %>">Change
+                                                Password</a>
+                                            <a href="/admin/user/edit-user/<%= user._id %>"><i
+                                                        class="fa fa-edit"></i></a>
+                                            <a href="/admin/user/delete-user/<%= user._id %>"
+                                               onclick="confirm('Are you sure to delete?')"><i class="fa fa-trash"
+                                                                                               style="color:red;"></i></a>
+                                        <% } %>
+                                    </td>
+                                </tr>
+                            <% }); %>
+                            </tbody>
+                        </table>
+                    <% } else { %>
+                        <h3 class="text-center">There are no users</h3>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $("#user").DataTable();
+</script>
+<%- include ('../admin/layouts/adminfooter') %>

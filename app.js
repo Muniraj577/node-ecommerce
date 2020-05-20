@@ -68,6 +68,7 @@ app.get('*', function (req, res, next) {
 let frontend = require('./routes/frontend/frontend');
 let cart = require('./routes/frontend/cart');
 let admin = require('./routes/admin/admin');
+let adminuser = require('./routes/admin/user');
 let users = require('./routes/user/users');
 let admincategory = require('./routes/admin/category');
 let adminproduct = require('./routes/admin/product');
@@ -77,6 +78,7 @@ app.use('/admin', admin);
 app.use('/users', users);
 app.use('/admin/categories', admincategory);
 app.use('/admin/products', adminproduct);
+app.use('/admin/user', adminuser);
 //Start the server
 let hostname = '127.0.0.1';
 let port = 3000;
