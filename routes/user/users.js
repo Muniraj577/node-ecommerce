@@ -86,4 +86,51 @@ router.get('/logout', function (req, res) {
     req.flash('success', 'You are logged out');
     res.redirect('/users/login');
 });
+
+router.get('/change-user-password/:id', isUser, (req, res) => {
+    let errors;
+    if (req.session.errors) errors = req.session.errors;
+    req.session.errors = null;
+    User.findById(req.params.id, (err, user) => {
+        if (err) console.log(err);
+        res.render('frontend/change-password', {
+            title: 'Change Password',
+            id: user._id,
+            errors: errors
+        });
+    });
+});
+
+router.post('/change-user-password/:id', [
+    check('password', 'Password is required').not().isEmpty(),
+    check('password2', 'Passwords do not match').custom((value, {req}) => (value === req.body.password)),
+], (req, res, next) => {
+    let id = req.params.id;
+    let password = req.body.password;
+    let password2 = req.body.password2;
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        req.session.errors = errors.array();
+        res.redirect('back');
+    } else {
+        User.findById(id, (err, user) => {
+            if (err) console.log(err);
+            user.password = password;
+            bcrypt.genSalt(10, function (err, salt) {
+                bcrypt.hash(user.password, salt, function (err, hash) {
+                    if (err) console.log(err);
+                    user.password = hash;
+                    user.save(function (err) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            req.flash('success', 'Password changed.');
+                            res.redirect('/shop');
+                        }
+                    });
+                });
+            });
+        });
+    }
+});
 module.exports = router;
